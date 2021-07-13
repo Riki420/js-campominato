@@ -21,6 +21,9 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 var listBombs = [];
 var listUser = [];
 var listDupli = [];
+var userNum;
+var possibilita = 5;  //! DA CAMBIARE PER AVERE UN DETERMINATO NUMERO DI TENTATIVI
+var find = false;
 
 //genero i 16 numeri casuali per il COM con un ciclo while
 var i = 0;
@@ -34,11 +37,22 @@ console.log('Array BOMBS: ' + listBombs);
 
 
 //chiedo il numero all'utente per 100 - 16 volte
-//!for(var i = 0; i <= (100 - 16); i++){         DA SCOMMENTARE PER OTTENERE GLI 84 PROMPT
-for(var i = 1; i <= 10; i++){                //! DA CANCELLARE 
-    var userNum = parseInt(prompt('Inserisci un numero'));
-    listUser.push(userNum);
-}
+var l = 0;
+while (l < possibilita && find == false) {
 
-//stampo in console l'array dell'utente
-console.log('Array User: 'listUser)
+    //prompt per l'utente
+  userNum = parseInt(prompt('Inserisci un numero da 1 a 100'));
+  console.log('Numero inserito: ' + userNum);
+  listUser.push(userNum);
+
+    //se il numero inserito è presente nelle bombe perdi la partita, altrimenti continua
+  for (var i = 0; i < listBombs.length; i++) {
+    if (userNum == listBombs[i]) {
+      find = true;
+    }
+    if (find == true) {
+      console.log("Sei finito su una bomba, sei caduto soldato");
+    }
+  }
+  l++;
+}
