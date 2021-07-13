@@ -19,7 +19,7 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 
 //creo gli array dove andrò poi ad inserire i valori del COM e del PLAYER
 var listBombs = [];
-var listChoice = [];
+var listUser = [];
 var listDupli = [];
 
 //genero i 16 numeri casuali per il COM con un ciclo while
@@ -30,4 +30,15 @@ while(i < (16 + 1)){
     i++;
 }
 //stampo in console l'array delle bombe
-console.log(listBombs);
+console.log('Array BOMBS: ' + listBombs);
+
+
+//chiedo il numero all'utente per 100 - 16 volte
+//!for(var i = 0; i <= (100 - 16); i++){         DA SCOMMENTARE PER OTTENERE GLI 84 PROMPT
+for(var i = 1; i <= 10; i++){                //! DA CANCELLARE 
+    var userNum = parseInt(prompt('Inserisci un numero'));
+    listUser.push(userNum);
+}
+
+//stampo in console l'array dell'utente
+console.log('Array User: 'listUser)
