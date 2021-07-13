@@ -22,7 +22,7 @@ var listBombs = [];
 var listUser = [];
 var listDupli = [];
 var userNum;
-var possibilita = 5;  //! DA CAMBIARE PER AVERE UN DETERMINATO NUMERO DI TENTATIVI
+var possibilita = 5;  //! DA CAMBIARE PER AVERE UN DETERMINATO NUMERO DI TENTATIVI  84
 var find = false;
 
 //genero i 16 numeri casuali per il COM con un ciclo while
@@ -50,9 +50,13 @@ while (l < possibilita && find == false) {
     if (userNum == listBombs[i]) {
       find = true;
     }
-    if (find == true) {
-      console.log("Sei finito su una bomba, sei caduto soldato");
-    }
   }
   l++;
+}
+
+//stampo in console il risultato della partita
+if (find == true) {
+    console.log("Sei finito su una bomba, sei caduto soldato");
+  } else if(find == false){
+console.log('Hai vinto la partita');
 }
