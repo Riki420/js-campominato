@@ -15,3 +15,19 @@ Quando la partita termina, comunichiamo all'utente il suo punteggio.
 //* 5 Verificare se il numero inserito è presente nell' array delle bombe, nel caso partita finita
 //* 6 Verificare se il numero inserito non è presente tra i doppioni e le bombe, lo aggiungo nell'array dei numeri scelti
 
+
+
+//creo gli array dove andrò poi ad inserire i valori del COM e del PLAYER
+var listBombs = [];
+var listChoice = [];
+var listDupli = [];
+
+//genero i 16 numeri casuali per il COM con un ciclo while
+var i = 0;
+while(i < (16 + 1)){
+    var comNum = Math.floor(Math.random() * (100 - 16) + 1);
+    listBombs.push(comNum);
+    i++;
+}
+//stampo in console l'array delle bombe
+console.log(listBombs);
