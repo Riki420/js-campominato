@@ -45,12 +45,15 @@ var find = false;
 var difficult = ['facile', 'normale', 'difficile', 'estrema', 'leggenda'];
 var level;
 
+
+
+
 //--------------------------------------------------------------------------------------//
 //                              //* Scegli difficoltà                                   //
 //--------------------------------------------------------------------------------------//
 
 do{
-  level = prompt('Scegli una difficoltà tra "facile", "normale", "difficile", "estrema", "leggenda"');    //chiediamo il livello di difficoltà
+  level = prompt('Scegli una difficoltà tra "Facile", "Normale", "Difficile", "Estrema", "Leggenda"');    //chiediamo il livello di difficoltà
 } while(!level || !isInArray(level.toLowerCase().trim(), difficult));                                    //finchè il campo non è stato riempito correttamente, richiedi
 
 switch(level.toLowerCase().trim()){   // scelta la difficoltà cambio il totalNumbers per ottenere più livelli
@@ -131,13 +134,16 @@ while (!userLost && listUser.length < possibilita) {
 //stampo in console e in pagina il risultato della partita
 
 
-if(userLost){
+if(userLost){                                                                               //se userLost è true perdi la partita
   alert('hai perso');
-  document.getElementById('display').innerText = 'Hai perso la partita soldato';    //se userLost è true perdi la partita
+  document.getElementById('display').innerText = 'Hai perso la partita soldato';
+  document.body.style.backgroundColor = "#ba2d20";
+  document.getElementById("bgimg").style.backgroundImage = url('../img/200.gif'); 
 
-} else{
+} else{                                                                                     //se userLost è false vinci la partita
   alert('hai vinto');
-  document.getElementById('display').innerText = 'Hai vinto la partita soldato';    //se userLost è false vinci la partita
+  document.getElementById('display').innerText = 'Hai vinto la partita soldato';
+  document.body.style.backgroundColor = "#31ab1f";
 }
 
 //variabili elementi
