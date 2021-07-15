@@ -42,6 +42,7 @@ var listDupli = [];
 var userNum;
 var possibilita = 5;  //! DA CAMBIARE PER AVERE UN DETERMINATO NUMERO DI TENTATIVI  84 (totalNumbers - totalBombs)
 var find = false;
+var difficult = ['facile', 'normale', 'difficile'];
 
 
 
