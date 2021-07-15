@@ -42,7 +42,7 @@ var listDupli = [];
 var userNum;
 var possibilita = totalNumbers - totalBombs;
 var find = false;
-var difficult = ['facile', 'normale', 'difficile'];
+var difficult = ['facile', 'normale', 'difficile', 'estrema', 'leggenda'];
 var level;
 
 //--------------------------------------------------------------------------------------//
@@ -50,19 +50,26 @@ var level;
 //--------------------------------------------------------------------------------------//
 
 do{
-  level = prompt('Scegli una difficoltà tra "facile", "normale", "difficile"');
-} while(!level || !isInArray(level.toLowerCase().trim(), difficult));
+  level = prompt('Scegli una difficoltà tra "facile", "normale", "difficile", "estrema", "leggenda"');    //chiediamo il livello di difficoltà
+} while(!level || !isInArray(level.toLowerCase().trim(), difficult));                                    //finchè il campo non è stato riempito correttamente, richiedi
 
-switch(level.toLowerCase().trim()){
+switch(level.toLowerCase().trim()){   // scelta la difficoltà cambio il totalNumbers per ottenere più livelli
   case 'facile':
     totalNumbers = 100;
     break;
   case 'normale':
     totalNumbers = 80;
     break;
-    case 'difficile':
-    totalNumbers = 50;  
-    break;
+  case 'difficile':
+  totalNumbers = 50;  
+  break;
+  case 'estrema':
+  totalNumbers = 32;  
+  break;
+  case 'leggenda':
+  totalNumbers = 100;
+  totalBombs = 70;
+  break;
 }
 
 
