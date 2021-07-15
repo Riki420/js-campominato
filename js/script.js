@@ -40,9 +40,31 @@ var listBombs = [];
 var listUser = [];
 var listDupli = [];
 var userNum;
-var possibilita = 5;  //! DA CAMBIARE PER AVERE UN DETERMINATO NUMERO DI TENTATIVI  84 (totalNumbers - totalBombs)
+var possibilita = totalNumbers - totalBombs;
 var find = false;
 var difficult = ['facile', 'normale', 'difficile'];
+var level;
+
+//--------------------------------------------------------------------------------------//
+//                              //* Scegli difficoltà                                   //
+//--------------------------------------------------------------------------------------//
+
+do{
+  level = prompt('Scegli una difficoltà tra "facile", "normale", "difficile"');
+} while(!level || !isInArray(level.toLowerCase().trim(), difficult));
+
+switch(level.toLowerCase().trim()){
+  case 'facile':
+    totalNumbers = 100;
+    break;
+  case 'normale':
+    totalNumbers = 80;
+    break;
+    case 'difficile':
+    totalNumbers = 50;  
+    break;
+}
+
 
 
 
