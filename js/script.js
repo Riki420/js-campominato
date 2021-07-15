@@ -29,7 +29,10 @@ var find = false;
 var i = 0;
 while(i < (16 + 1)){
     var comNum = Math.floor(Math.random() * (100 - 16) + 1);
-    listBombs.push(comNum);
+    if(!listBombs.includes(comNum)){
+      listBombs.push(comNum);
+
+    }
     i++;
 }
 //stampo in console l'array delle bombe
@@ -43,9 +46,10 @@ while (l < possibilita && find == false) {
     //prompt per l'utente
   userNum = parseInt(prompt('Inserisci un numero da 1 a 100'));
   console.log('Numero inserito: ' + userNum);
+  if(userNum)
   listUser.push(userNum);
-
-    //se il numero inserito è presente nelle bombe perdi la partita, altrimenti continua
+  
+    //se il numero inserito è presente nelle bombe perdi la partita, altrimenti continua fino alla vittoria
   for (var i = 0; i < listBombs.length; i++) {
     if (userNum == listBombs[i]) {
       find = true;
@@ -54,9 +58,17 @@ while (l < possibilita && find == false) {
   l++;
 }
 
-//stampo in console il risultato della partita
+//stampo in console e in pagina il risultato della partita
 if (find == true) {
     console.log("Sei finito su una bomba, sei caduto soldato");
+    var message = "Sei finito su una bomba, sei caduto soldato";
+    document.getElementById('display').innerHTML = message;
   } else if(find == false){
-console.log('Hai vinto la partita');
+    console.log("Missione compiuta, l'addestramento è finito soldato");
+    var message = "Missione compiuta, l'addestramento è finito soldato";
+    document.getElementById('display').innerHTML = message;
 }
+
+// ? Nel caso in cui ci fossero numeri uguali, richiedi il numero
+  //creo una funzione per non far ripetere all'utente gli stessi numeri
+ 
